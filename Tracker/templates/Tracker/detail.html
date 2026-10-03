@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="/static/Tracker/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <a href="/">← Back to products</a>
+    <h1 id="product-name">Loading...</h1>
+
+    <div id="summary">
+        <p>Current Price: ₹<span id="current-price">-</span></p>
+        <p>Lowest Recorded: ₹<span id="lowest-price">-</span></p>
+        <p>Highest Recorded: ₹<span id="highest-price">-</span></p>
+        <p>Price Change: ₹<span id="price-change">-</span></p>
+    </div>
+
+    <h2>Price History</h2>
+    <canvas id="price-chart" width="600" height="300"></canvas>
+
+    <h2>Store Comparison</h2>
+    <table id="comparison-table">
+        <thead>
+            <tr><th>Store</th><th>Price</th></tr>
+        </thead>
+        <tbody id="comparison-body"></tbody>
+    </table>
+
+    <script>
+        const PRODUCT_ID = "{{ product_id }}";
+    </script>
+    <script src="/static/Tracker/detail.js"></script>
+</body>
+</html>

@@ -18,8 +18,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from Tracker import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("Tracker.urls")),
+    path("", views.product_list_page, name="home"),
+    path("product/<int:pk>/", views.product_detail_page, name="product-detail-page"),
 ]

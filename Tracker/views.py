@@ -7,7 +7,14 @@ from rest_framework.response import Response
 from .models import Product, PriceRecord
 from .serializers import ProductSerializer, PriceRecordSerializer
 from .services import get_current_price, get_lowest_price, get_highest_price, get_price_change, get_best_price_comparison
+from django.shortcuts import render
 
+def product_list_page(request):
+    return render(request, "Tracker/index.html")
+
+
+def product_detail_page(request, pk):
+    return render(request, "Tracker/detail.html", {"product_id": pk})
 
 class ProductListCreateView(generics.ListCreateAPIView):
     queryset = Product.objects.all()
